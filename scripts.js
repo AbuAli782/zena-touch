@@ -52,8 +52,10 @@ const hamburgerBtn = document.getElementById('hamburger-btn');
 const navMenu = document.getElementById('nav-menu');
 
 if (hamburgerBtn && navMenu) {
-    hamburgerBtn.addEventListener('click', function() {
+    hamburgerBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
         navMenu.classList.toggle('active');
+        hamburgerBtn.classList.toggle('active');
     });
 
     // إغلاق القائمة عند النقر على رابط
@@ -61,13 +63,24 @@ if (hamburgerBtn && navMenu) {
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
             navMenu.classList.remove('active');
+            hamburgerBtn.classList.remove('active');
         });
     });
 
     // إغلاق القائمة عند النقر خارجها
     document.addEventListener('click', function(event) {
-        if (!event.target.closest('.navbar')) {
+        const isClickInsideNav = event.target.closest('.navbar');
+        if (!isClickInsideNav && navMenu.classList.contains('active')) {
             navMenu.classList.remove('active');
+            hamburgerBtn.classList.remove('active');
+        }
+    });
+    
+    // إغلاق القائمة عند الضغط على Escape
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            hamburgerBtn.classList.remove('active');
         }
     });
 }
