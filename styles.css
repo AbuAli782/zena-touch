@@ -40,65 +40,24 @@ body {
     padding-inline: clamp(1rem, 5vw, 2rem);
 }
 
-/* ===== Top Bar ===== */
-.top-bar {
-    background: linear-gradient(135deg, var(--secondary-color) 0%, #34495e 100%);
+/* ===== Navbar ===== */
+.navbar {
+    background: linear-gradient(135deg, #1a2332 0%, #2c3e50 50%, #1a2332 100%);
     padding-block: clamp(0.75rem, 2vh, 1rem);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), 
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
     border-block-end: 3px solid var(--primary-color);
-    box-shadow: var(--shadow-3d);
+    backdrop-filter: blur(10px);
+    width: 100%;
 }
 
-.top-bar-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: clamp(1rem, 3vw, 2rem);
-    flex-direction: row-reverse;
-}
-
-.contact-info {
-    display: flex;
-    gap: clamp(1.5rem, 4vw, 2.5rem);
-    flex-direction: row-reverse;
-}
-
-.info-item {
-    display: flex;
-    align-items: center;
-    gap: clamp(0.75rem, 2vw, 1rem);
-    flex-direction: row-reverse;
-}
-
-.info-item .label {
-    font-size: clamp(0.65rem, 1.5vw, 0.75rem);
-    color: #bdc3c7;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.phone-link,
-.email-link {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 700;
-    font-size: clamp(0.85rem, 2vw, 1rem);
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    gap: clamp(0.5rem, 1.5vw, 0.75rem);
-}
-
-.phone-link:hover,
-.email-link:hover {
-    color: var(--accent-color);
-    transform: translateX(-0.25rem);
-}
-
-.phone-link i,
-.email-link i {
-    font-size: clamp(1rem, 2.5vw, 1.25rem);
+body {
+    padding-top: clamp(4rem, 12vh, 6rem);
 }
 
 .logo-section {
@@ -133,26 +92,6 @@ body {
                 0 0 40px rgba(26, 188, 156, 0.5),
                 inset -2px -2px 5px rgba(0, 0, 0, 0.3),
                 inset 2px 2px 5px rgba(255, 255, 255, 0.15);
-}
-
-/* ===== Navbar ===== */
-.navbar {
-    background: linear-gradient(135deg, #1a2332 0%, #2c3e50 50%, #1a2332 100%);
-    padding-block: clamp(0.75rem, 2vh, 1rem);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), 
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    border-block-end: 3px solid var(--primary-color);
-    backdrop-filter: blur(10px);
-    width: 100%;
-}
-
-body {
-    padding-top: clamp(4rem, 12vh, 6rem);
 }
 
 .nav-content {
@@ -217,38 +156,6 @@ body {
     display: none;
 }
 
-.search-input {
-    background: transparent;
-    border: none;
-    color: var(--white);
-    padding-inline: clamp(0.5rem, 1.5vw, 0.75rem);
-    width: clamp(150px, 20vw, 220px);
-    outline: none;
-    font-family: 'Cairo', sans-serif;
-    font-size: clamp(0.85rem, 1.5vw, 1rem);
-}
-
-.search-input::placeholder {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.search-btn {
-    background: transparent;
-    border: none;
-    color: var(--white);
-    cursor: pointer;
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    padding-inline: clamp(0.5rem, 1vw, 0.75rem);
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.search-btn:hover {
-    color: var(--primary-color);
-    transform: scale(1.15) rotate(10deg);
-}
 
 .nav-menu {
     display: flex;
@@ -919,67 +826,105 @@ body {
     bottom: clamp(2rem, 5vh, 3rem);
     display: flex;
     flex-direction: column;
-    gap: clamp(1rem, 2vh, 1.5rem);
+    gap: clamp(1.2rem, 2.5vh, 1.8rem);
     z-index: 999;
 }
 
 .contact-btn {
     display: flex;
     align-items: center;
-    gap: clamp(0.5rem, 1.5vw, 0.8rem);
-    padding: clamp(0.8rem, 1.5vh, 1rem) clamp(1rem, 2vw, 1.5rem);
-    border-radius: 50px;
+    justify-content: center;
+    gap: clamp(0.8rem, 2vw, 1.2rem);
+    padding: clamp(1rem, 2vh, 1.3rem) clamp(1.5rem, 3vw, 2.2rem);
+    border-radius: clamp(50px, 10vw, 60px);
     text-decoration: none;
-    font-weight: 600;
-    font-size: clamp(0.9rem, 1.5vw, 1rem);
-    transition: var(--transition);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    font-weight: 700;
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     border: none;
     cursor: pointer;
     white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.5px;
+    text-transform: none;
+}
+
+.contact-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+
+.contact-btn:hover::before {
+    left: 100%;
 }
 
 .contact-btn i {
-    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    font-size: clamp(1.5rem, 3vw, 2rem);
     display: flex;
     align-items: center;
     justify-content: center;
-    width: clamp(2rem, 4vw, 2.5rem);
-    height: clamp(2rem, 4vw, 2.5rem);
+    width: clamp(2.2rem, 5vw, 2.8rem);
+    height: clamp(2.2rem, 5vw, 2.8rem);
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.25);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-btn:hover i {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.15) rotate(10deg);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* WhatsApp Button */
 .whatsapp-btn {
-    background: linear-gradient(135deg, #25d366 0%, #20ba5a 100%);
+    background: linear-gradient(135deg, #25d366 0%, #20ba5a 50%, #1aa84f 100%);
     color: var(--white);
+    box-shadow: 0 12px 35px rgba(37, 211, 102, 0.35),
+                0 0 20px rgba(37, 211, 102, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .whatsapp-btn:hover {
-    background: linear-gradient(135deg, #20ba5a 0%, #1aa84f 100%);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4);
+    background: linear-gradient(135deg, #20ba5a 0%, #1aa84f 50%, #0f9b3a 100%);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 18px 45px rgba(37, 211, 102, 0.5),
+                0 0 30px rgba(37, 211, 102, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
-.whatsapp-btn i {
-    background: rgba(255, 255, 255, 0.3);
+.whatsapp-btn:active {
+    transform: translateY(-2px) scale(1.02);
 }
 
 /* Call Button */
 .call-btn {
-    background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+    background: linear-gradient(135deg, #0066cc 0%, #0052a3 50%, #003d7a 100%);
     color: var(--white);
+    box-shadow: 0 12px 35px rgba(0, 102, 204, 0.35),
+                0 0 20px rgba(0, 102, 204, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .call-btn:hover {
-    background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(0, 102, 204, 0.4);
+    background: linear-gradient(135deg, #0052a3 0%, #003d7a 50%, #002d5a 100%);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 18px 45px rgba(0, 102, 204, 0.5),
+                0 0 30px rgba(0, 102, 204, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
-.call-btn i {
-    background: rgba(255, 255, 255, 0.3);
+.call-btn:active {
+    transform: translateY(-2px) scale(1.02);
 }
 
 /* Responsive for small screens */
@@ -1091,22 +1036,6 @@ body {
 
 /* Tablet Screens (601px - 768px) */
 @media (max-width: 768px) {
-    .top-bar-content {
-        flex-direction: column;
-        gap: clamp(1rem, 2vh, 1.5rem);
-    }
-
-    .contact-info {
-        gap: clamp(1rem, 3vw, 1.5rem);
-        width: 100%;
-        justify-content: center;
-        flex-direction: row;
-    }
-
-    .info-item {
-        flex-direction: row;
-    }
-
     .nav-content {
         flex-direction: column-reverse;
         gap: clamp(0.75rem, 2vh, 1rem);
@@ -1116,15 +1045,6 @@ body {
         width: 100%;
         flex-wrap: wrap;
         justify-content: center;
-    }
-
-    .search-box {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .search-input {
-        width: 100%;
     }
 
     .logo {
