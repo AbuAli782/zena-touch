@@ -1,0 +1,172 @@
+# Robots.txt for Zena Touch - خدمات متكاملة 24 ساعة
+# This file controls search engine crawler access and behavior
+
+# ===== Global Rules for All Bots =====
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /services.html
+Allow: /decoration.html
+Allow: /electricity.html
+Allow: /plumbing.html
+Allow: /about.html
+Allow: /contact.html
+Allow: /location.html
+Allow: /images/
+Allow: /css/
+Allow: /js/
+Allow: /scripts.js
+Allow: /styles.css
+Allow: /home-hero.css
+Allow: /plumbing-hero.css
+Allow: /electricity-hero.css
+Allow: /decoration-hero.css
+
+# Disallow private and admin areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /backup/
+Disallow: /*.json$
+Disallow: /*?*sort=
+Disallow: /*?*filter=
+Disallow: /*?*page=
+Disallow: /*?*utm_
+
+# Disallow duplicate content
+Disallow: /*?*duplicate=
+Disallow: /*?*version=
+
+# Crawl delay and request rate
+Crawl-delay: 1
+Request-rate: 30/1m
+
+# ===== Google Bot Specific Rules =====
+User-agent: Googlebot
+Allow: /
+Allow: /images/
+Allow: /css/
+Allow: /js/
+Disallow: /admin/
+Disallow: /private/
+Crawl-delay: 0
+
+# ===== Bing Bot Specific Rules =====
+User-agent: Bingbot
+Allow: /
+Allow: /images/
+Allow: /css/
+Allow: /js/
+Disallow: /admin/
+Disallow: /private/
+Crawl-delay: 1
+
+# ===== Yandex Bot Specific Rules =====
+User-agent: YandexBot
+Allow: /
+Allow: /images/
+Allow: /css/
+Allow: /js/
+Disallow: /admin/
+Disallow: /private/
+Crawl-delay: 1
+
+# ===== Baidu Bot Specific Rules =====
+User-agent: Baiduspider
+Allow: /
+Allow: /images/
+Allow: /css/
+Allow: /js/
+Disallow: /admin/
+Disallow: /private/
+Crawl-delay: 1
+
+# ===== Block Bad Bots =====
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot-Site
+Disallow: /
+
+User-agent: SemrushBot-BA
+Disallow: /
+
+User-agent: SemrushBot-SiteAudit
+Disallow: /
+
+User-agent: DotBot/1.1
+Disallow: /
+
+User-agent: MJ12bot/v1.4.8
+Disallow: /
+
+# ===== Sitemap Location =====
+Sitemap: https://abuali782.github.io/zena-touch/sitemap.xml
+Sitemap: https://abuali782.github.io/zena-touch/sitemap-ar.xml
+
+# ===== Host Declaration =====
+Host: https://abuali782.github.io/zena-touch/
+
+# ===== Specific Page Rules =====
+# Allow all service pages
+Allow: /services.html
+Allow: /decoration.html
+Allow: /electricity.html
+Allow: /plumbing.html
+
+# Allow all information pages
+Allow: /about.html
+Allow: /contact.html
+Allow: /location.html
+
+# Allow all images for better indexing
+Allow: /images/*.jpg
+Allow: /images/*.jpeg
+Allow: /images/*.png
+Allow: /images/*.gif
+Allow: /images/*.webp
+Allow: /images/*.svg
+
+# ===== Cache Control =====
+# Suggest cache time for different content types
+# (Note: These are suggestions, not enforced by robots.txt)
+
+# ===== Additional Security =====
+# Disallow access to sensitive files
+Disallow: /.git/
+Disallow: /.gitignore
+Disallow: /.env
+Disallow: /config.php
+Disallow: /config.js
+Disallow: /*.sql
+Disallow: /*.zip
+Disallow: /*.tar
+Disallow: /*.gz
+
+# ===== Performance Optimization =====
+# Limit crawl rate for non-essential resources
+User-agent: *
+Disallow: /images/temp/
+Disallow: /cache/
+Disallow: /logs/
+
+# ===== Mobile Specific =====
+# Allow mobile crawlers
+User-agent: Googlebot-Mobile
+Allow: /
+
+User-agent: Bingbot-Mobile
+Allow: /
+
+# ===== End of Robots.txt =====
+# Last Updated: 2025-11-26
+# For more information, visit: https://www.robotstxt.org/
