@@ -1,0 +1,409 @@
+/* ===== Location Page Styles ===== */
+
+/* Location Hero Section */
+.location-hero {
+    background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%);
+    padding: clamp(2rem, 5vh, 3.5rem) clamp(1rem, 5vw, 2rem);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: clamp(200px, 35vh, 400px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.location-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="1200" height="600" fill="%231abc9c"/><rect width="1200" height="600" fill="url(%23grid)"/></svg>');
+    background-size: cover;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.location-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.2rem, 2.5vh, 1.8rem);
+    width: 100%;
+}
+
+.location-hero-header {
+    background: linear-gradient(135deg, #0d7a6f 0%, #0a5f5a 100%);
+    padding: clamp(1.2rem, 2.5vh, 1.8rem) clamp(1.5rem, 4vw, 2.5rem);
+    border-radius: clamp(0.8rem, 2vw, 1.5rem);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25),
+                inset 0 1px 3px rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.location-hero-header:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35),
+                inset 0 1px 3px rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.location-hero-header h1 {
+    font-size: clamp(1.3rem, 3.5vw, 1.9rem);
+    font-weight: 900;
+    color: #ffffff;
+    margin: 0;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.05em;
+    line-height: 1.6;
+    word-spacing: 0.1em;
+}
+
+.location-hero-description {
+    background: rgba(255, 255, 255, 0.95);
+    padding: clamp(1.2rem, 2.5vh, 1.8rem) clamp(1.5rem, 4vw, 2.5rem);
+    border-radius: clamp(0.8rem, 2vw, 1.2rem);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15),
+                inset 0 1px 2px rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(26, 188, 156, 0.2);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.location-hero-description:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2),
+                inset 0 1px 2px rgba(255, 255, 255, 0.5);
+    border-color: rgba(26, 188, 156, 0.4);
+}
+
+.location-hero-description p {
+    font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+    color: #1a2332;
+    margin: 0;
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+    font-weight: 500;
+    word-spacing: 0.05em;
+}
+
+/* Coverage Section */
+.coverage-section {
+    margin: clamp(3rem, 6vh, 5rem) 0;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 2vw, 1.5rem);
+    margin-bottom: clamp(2rem, 4vh, 3rem);
+    flex-direction: row;
+}
+
+.section-header i {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    color: #1abc9c;
+}
+
+.section-header h2 {
+    font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+    color: #0d7a6f;
+    margin: 0;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+}
+
+.coverage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: clamp(2rem, 4vw, 3rem);
+}
+
+.coverage-card {
+    background: white;
+    padding: clamp(2rem, 4vh, 3rem);
+    border-radius: clamp(1rem, 2vw, 1.5rem);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border-right: 6px solid #1abc9c;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    text-align: right;
+}
+
+.coverage-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    border-right-color: #0d7a6f;
+}
+
+.coverage-card.emergency-card {
+    border-right-color: #e74c3c;
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+}
+
+.coverage-card.emergency-card:hover {
+    border-right-color: #c0392b;
+}
+
+.card-icon {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    color: #1abc9c;
+    margin-bottom: clamp(1rem, 2vh, 1.5rem);
+    display: block;
+}
+
+.coverage-card.emergency-card .card-icon {
+    color: #e74c3c;
+}
+
+.coverage-card h3 {
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    color: #0d7a6f;
+    margin: 0 0 clamp(0.8rem, 1.5vh, 1.2rem) 0;
+    font-weight: 700;
+}
+
+.coverage-card > p {
+    font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+    color: #2c3e50;
+    margin-bottom: clamp(1.2rem, 2.5vh, 1.8rem);
+    line-height: 1.7;
+}
+
+.areas-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.6rem, 1.2vh, 0.9rem);
+}
+
+.areas-list li {
+    font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+    gap: clamp(0.8rem, 1.5vw, 1.2rem);
+    line-height: 1.6;
+}
+
+.areas-list i {
+    color: #1abc9c;
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    flex-shrink: 0;
+}
+
+.coverage-card.emergency-card .areas-list i {
+    color: #e74c3c;
+}
+
+/* Map Section */
+.map-section {
+    margin: clamp(3rem, 6vh, 5rem) 0;
+    padding: clamp(2rem, 4vh, 3rem);
+    background: white;
+    border-radius: clamp(1rem, 2vw, 1.5rem);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.map-container {
+    border-radius: clamp(0.8rem, 1.5vw, 1.2rem);
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Quick Contact Section */
+.quick-contact-section {
+    margin: clamp(3rem, 6vh, 5rem) 0;
+    padding: clamp(2rem, 4vh, 3rem);
+    background: linear-gradient(135deg, #f8f9fa 0%, #ecf0f1 100%);
+    border-radius: clamp(1rem, 2vw, 1.5rem);
+}
+
+.quick-contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.quick-contact-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(0.8rem, 1.5vh, 1.2rem);
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    border-radius: clamp(1rem, 2vw, 1.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 2px solid transparent;
+}
+
+.quick-contact-btn i {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.phone-btn {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+}
+
+.phone-btn:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(52, 152, 219, 0.3);
+}
+
+.whatsapp-btn {
+    background: linear-gradient(135deg, #25d366 0%, #20ba58 100%);
+    color: white;
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(37, 211, 102, 0.3);
+}
+
+.contact-btn {
+    background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%);
+    color: white;
+}
+
+.contact-btn:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(26, 188, 156, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .location-hero {
+        padding: clamp(1.5rem, 4vh, 2.5rem) clamp(0.8rem, 3vw, 1.5rem);
+        min-height: clamp(180px, 30vh, 350px);
+    }
+
+    .location-hero-header {
+        padding: clamp(1rem, 2vh, 1.5rem) clamp(1.2rem, 3vw, 2rem);
+    }
+
+    .location-hero-header h1 {
+        font-size: clamp(1.1rem, 2.8vw, 1.6rem);
+    }
+
+    .location-hero-description {
+        padding: clamp(1rem, 2vh, 1.5rem) clamp(1.2rem, 3vw, 2rem);
+    }
+
+    .location-hero-description p {
+        font-size: clamp(0.85rem, 1.5vw, 1rem);
+    }
+
+    .coverage-grid {
+        grid-template-columns: 1fr;
+        gap: clamp(1.5rem, 3vh, 2rem);
+    }
+
+    .coverage-card {
+        padding: clamp(1.5rem, 3vh, 2rem);
+    }
+
+    .quick-contact-grid {
+        grid-template-columns: 1fr;
+        gap: clamp(1rem, 2vh, 1.5rem);
+    }
+
+    .quick-contact-btn {
+        padding: clamp(1.2rem, 2.5vh, 1.8rem);
+    }
+
+    .map-container iframe {
+        height: 350px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .location-hero {
+        padding: clamp(1rem, 3vh, 1.5rem) clamp(0.6rem, 2vw, 1rem);
+        min-height: clamp(150px, 25vh, 300px);
+    }
+
+    .location-hero-header {
+        padding: clamp(0.8rem, 1.5vh, 1.2rem) clamp(1rem, 2.5vw, 1.5rem);
+    }
+
+    .location-hero-header h1 {
+        font-size: clamp(1rem, 2.2vw, 1.3rem);
+        letter-spacing: 0.02em;
+    }
+
+    .location-hero-description {
+        padding: clamp(0.8rem, 1.5vh, 1.2rem) clamp(1rem, 2.5vw, 1.5rem);
+    }
+
+    .location-hero-description p {
+        font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+    }
+
+    .section-header {
+        gap: clamp(0.8rem, 1.5vw, 1.2rem);
+        margin-bottom: clamp(1.5rem, 3vh, 2rem);
+    }
+
+    .section-header i {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+    }
+
+    .section-header h2 {
+        font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    }
+
+    .coverage-grid {
+        grid-template-columns: 1fr;
+        gap: clamp(1rem, 2vh, 1.5rem);
+    }
+
+    .coverage-card {
+        padding: clamp(1rem, 2vh, 1.5rem);
+    }
+
+    .card-icon {
+        font-size: clamp(2rem, 4vw, 2.5rem);
+        margin-bottom: clamp(0.8rem, 1.5vh, 1rem);
+    }
+
+    .coverage-card h3 {
+        font-size: clamp(1.1rem, 2vw, 1.4rem);
+    }
+
+    .coverage-card > p {
+        font-size: clamp(0.85rem, 1.3vw, 0.95rem);
+    }
+
+    .areas-list li {
+        font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+        gap: clamp(0.6rem, 1.2vw, 1rem);
+    }
+
+    .quick-contact-grid {
+        grid-template-columns: 1fr;
+        gap: clamp(0.8rem, 1.5vh, 1.2rem);
+    }
+
+    .quick-contact-btn {
+        padding: clamp(1rem, 2vh, 1.5rem);
+        font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+    }
+
+    .quick-contact-btn i {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+    }
+
+    .map-container iframe {
+        height: 250px !important;
+    }
+}
